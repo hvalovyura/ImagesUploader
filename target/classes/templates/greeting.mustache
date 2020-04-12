@@ -5,6 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
     <body>
-    <div>Hello, {{name}}</div>
+        <div>All photos</div>
+        {{#photos}}
+            <b>{{id}}</b>
+            <span>{{name}}</span>
+            <span>{{imagePath}}</span>
+            <i>{{tag}}</i>
+        {{/photos}}
     </body>
 </html>

@@ -15,7 +15,18 @@ public class Photo {
     private String name;
     private String tag;
     private String imagePath;
-    private List<String> comments;
+    //private List<String> comments;
+
+    public Photo() {
+
+    }
+
+    public Photo(String name, String tag, String imagePath) {
+        this.name = name;
+        this.tag = tag;
+        this.imagePath = imagePath;
+        //this.comments = comments;
+    }
 
     public Integer getId() {
         return id;
@@ -49,11 +60,11 @@ public class Photo {
         this.imagePath = imagePath;
     }
 
-    public List<String> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<String> comments) {
-        this.comments = comments;
-    }
+//    public List<String> getComments() {
+//        return comments;
+//    }
+//
+//    public void setComments(List<String> comments) {
+//        this.comments = comments;
+//    }
 }
