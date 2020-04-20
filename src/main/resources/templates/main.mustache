@@ -2,10 +2,17 @@
 <html>
     <body>
         <div>
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
+        <div>
             <form method="post">
                 <input type="text" name="name" placeholder="Enter name" />
                 <input type="text" name="imagePath" placeholder="Enter path" />
                 <input type="text" name="tag" placeholder="Tag" />
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                 <button type="submit">Send</button>
             </form>
         </div>
