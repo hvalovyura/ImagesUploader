@@ -15,7 +15,17 @@ public class Photo {
     private String name;
     private String tag;
     private String imagePath;
-    //private List<String> comments;
+
+    private User author;
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+//private List<String> comments;
 
     public Photo() {
 

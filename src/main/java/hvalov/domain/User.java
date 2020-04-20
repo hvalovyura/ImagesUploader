@@ -1,7 +1,5 @@
 package hvalov.domain;
 
-import sun.util.resources.Bundles;
-
 import javax.persistence.*;
 import java.util.Set;
 
