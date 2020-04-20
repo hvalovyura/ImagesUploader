@@ -18,20 +18,15 @@ public class Photo {
 
     private User author;
 
-    public User getAuthor() {
-        return author;
-    }
 
-    public void setAuthor(User author) {
-        this.author = author;
-    }
 //private List<String> comments;
 
     public Photo() {
 
     }
 
-    public Photo(String name, String tag, String imagePath) {
+    public Photo(String name, String tag, String imagePath, User user) {
+        this.author = user;
         this.name = name;
         this.tag = tag;
         this.imagePath = imagePath;
@@ -68,6 +63,14 @@ public class Photo {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
 //    public List<String> getComments() {

@@ -1,8 +1,10 @@
 package hvalov.controller;
 
 import hvalov.domain.Photo;
+import hvalov.domain.User;
 import hvalov.repos.PhotoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +31,8 @@ public class MainController {
     }
 
     @PostMapping("/main")
-    public String add(@RequestParam String name, @RequestParam String imagePath, @RequestParam String tag, Map<String, Object> model){
-        Photo photo = new Photo(name, imagePath, tag);
+    public String add(@AuthenticationPrincipal User user, @RequestParam String name, @RequestParam String imagePath, @RequestParam String tag, Map<String, Object> model){
+        Photo photo = new Photo(name, imagePath, tag, user);
         photoRepo.save(photo);
 
         Iterable<Photo> photos = photoRepo.findAll();
