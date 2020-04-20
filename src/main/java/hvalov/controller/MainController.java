@@ -1,4 +1,4 @@
-package hvalov;
+package hvalov.controller;
 
 import hvalov.domain.Photo;
 import hvalov.repos.PhotoRepo;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
 
     @Autowired
     private PhotoRepo photoRepo;
