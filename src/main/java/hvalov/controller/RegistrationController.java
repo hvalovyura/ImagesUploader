@@ -1,5 +1,6 @@
 package hvalov.controller;
 
+import hvalov.domain.Role;
 import hvalov.domain.User;
 import hvalov.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,8 @@ public class RegistrationController {
             return "registration";
         }
         user.setActive(true);
-        user.setRoles(Collections.singleton());
+        user.setRoles(Collections.singleton(Role.USER));
+        userRepo.save(user);
         return "redirect:/login";
     }
 
