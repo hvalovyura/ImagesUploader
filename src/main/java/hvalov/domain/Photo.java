@@ -32,6 +32,10 @@ public class Photo {
         //this.comments = comments;
     }
 
+    public String getAuthorName() {
+        return author != null ? author.getUsername() : "<none>";
+    }
+
     public Integer getId() {
         return id;
     }
