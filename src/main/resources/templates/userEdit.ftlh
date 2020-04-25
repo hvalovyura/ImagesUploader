@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-User Editor
-<body>
+<#import "parts/common.ftlh" as c>
+
+
     <form action="user" method="post">
         <input type="text" name="username" value="{{user.username}}">
         <#list roles as role>
@@ -16,6 +12,3 @@ User Editor
         <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
         <button type="submit">Save</button>
     </form>
-
-</body>
-</html>
