@@ -7,10 +7,11 @@
     </div>
     <span><a href="/user">User List</a></span>
     <div>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Enter name" />
             <input type="text" name="imagePath" placeholder="Enter path" />
             <input type="text" name="tag" placeholder="Tag" />
+            <input type="file" name="file" />
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <button type="submit">Send</button>
         </form>
@@ -23,6 +24,11 @@
             <span>${photo.imagePath}</span>
             <i>${photo.tag}</i>
             <strong>${photo.authorName}</strong>
+            <div>
+                <#if photo.filename??>
+                    <img src="/img/${photo.filename}"
+                </#if>
+            </div>
         </div>
         <#else>
         No photo

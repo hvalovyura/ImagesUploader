@@ -12,6 +12,7 @@ public class Photo {
     private String name;
     private String tag;
     private String imagePath;
+    private String filename;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
@@ -30,6 +31,14 @@ public class Photo {
         this.tag = tag;
         this.imagePath = imagePath;
         //this.comments = comments;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public String getAuthorName() {
