@@ -1,27 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-    <div>List of users</div>
+<#import "parts/common.ftlh" as c>
+
+<@c.page>
+    List of users
     <table>
         <thead>
-        <tr>
-            <th>Name</th>
-            <th>Role</th>
-            <th></th>
-        </tr>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th></th>
+            </tr>
         </thead>
         <tbody>
-        {{#users}}
-        <tr>
-            <td>{{username}}</td>
-            <td>{{roles}}</td>
-            <td><a href="/user/{{id}}">Edit</a></td>
-        </tr>
-        {{/users}}
+            <#list users as user>
+                <tr>
+                    <td>${user.username}</td>
+                    <td><#list user.roles as role>${role}<#sep>, </#list></td>
+                    <td><a href="/user/${user.id}">Edit</a></td>
+                </tr>
+            </#list>
         </tbody>
     </table>
-</body>
-</html>
+</@c.page>
