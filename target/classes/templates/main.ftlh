@@ -42,7 +42,7 @@
         </div>
         <#else>
             No photo
-        </#list>>
+        </#list>
     </div>
 </@c.page>
 
