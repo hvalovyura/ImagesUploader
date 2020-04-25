@@ -2,12 +2,12 @@
 
 
 <@c.page>
-    <span><a href="/user">User List</a></span>
-    <div>
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        New photo
+    </a>
+    <div class="collapse" id="collapseExample">
         <form method="post" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Enter name" />
-            <input type="text" name="imagePath" placeholder="Enter path" />
-            <input type="text" name="tag" placeholder="Tag" />
             <input type="file" name="file" />
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <button type="submit">Send</button>
@@ -18,7 +18,6 @@
         <div>
             <b>${photo.id}</b>
             <span>${photo.name}</span>
-            <i>${photo.tag}</i>
             <strong>${photo.authorName}</strong>
             <div>
                 <#if photo.filename??>
