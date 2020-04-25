@@ -11,7 +11,6 @@ public class Photo {
 
     private String name;
     private String tag;
-    private String imagePath;
     private String filename;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -25,11 +24,10 @@ public class Photo {
 
     }
 
-    public Photo(String name, String tag, String imagePath, User user) {
+    public Photo(String name, String tag, User user) {
         this.author = user;
         this.name = name;
         this.tag = tag;
-        this.imagePath = imagePath;
         //this.comments = comments;
     }
 
@@ -67,14 +65,6 @@ public class Photo {
 
     public void setTag(String tag) {
         this.tag = tag;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
     }
 
     public User getAuthor() {

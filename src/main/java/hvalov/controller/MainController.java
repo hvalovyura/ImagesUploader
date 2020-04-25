@@ -42,11 +42,10 @@ public class MainController {
     public String add(
             @AuthenticationPrincipal User user,
             @RequestParam String name,
-            @RequestParam String imagePath,
             @RequestParam String tag, Map<String, Object> model,
             @RequestParam("file") MultipartFile file
             ) throws IOException {
-        Photo photo = new Photo(name, imagePath, tag, user);
+        Photo photo = new Photo(name, tag, user);
 
         if(file != null) {
             File uploadDir = new File(uploadPath);

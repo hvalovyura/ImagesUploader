@@ -21,7 +21,6 @@
         <div>
             <b>${photo.id}</b>
             <span>${photo.name}</span>
-            <span>${photo.imagePath}</span>
             <i>${photo.tag}</i>
             <strong>${photo.authorName}</strong>
             <div>
