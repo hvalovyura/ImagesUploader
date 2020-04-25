@@ -25,18 +25,24 @@
         </div>
     </div>
     <div>All photos</div>
-    <#list photos as photo>
-        <div>
-            <span>${photo.name}</span>
-            <strong>${photo.authorName}</strong>
+    <div class="card-columns">
+        <#list photos as photo>
+        <div class="card my-3">
             <div>
                 <#if photo.filename??>
-                    <img src="/img/${photo.filename}"
+                    <img src="/img/${photo.filename}" class="card-img-top">
                 </#if>
+            </div>
+            <div class="m-2">
+                <span>${photo.name}</span>
+            </div>
+            <div class="card-footer text-muted">
+                ${photo.authorName}
             </div>
         </div>
         <#else>
-        No photo
-    </#list>>
+            No photo
+        </#list>
+    </div>
 </@c.page>
 
