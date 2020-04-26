@@ -3,7 +3,7 @@
 
 <@c.page>
     ${message?ifExists}
-    <@l.login "/login" />
+    <@l.login "/login" false/>
     <a href="/registration">Add new user</a>
 </@c.page>
 
