@@ -46,3 +46,61 @@
     </div>
 </@c.page>
 
+<script>
+    $(document).ready(function() {
+
+        $(".card-img-top").click(function(){
+            var img = $(this);
+            var src = img.attr('src');
+            $("body").append("<div class='popup'>"+
+                "<div class='popup_bg'></div>"+
+                "<img src='"+src+"' class='popup_img' />"+
+                "</div>");
+            $(".popup").fadeIn(800);
+            $(".popup_bg").click(function(){
+                $(".popup").fadeOut(800);
+                setTimeout(function() {
+                    $(".popup").remove();
+                }, 800);
+            });
+        });
+
+    });
+</script>
+
+<style>
+    body {
+        margin:0;
+    }
+    .image {
+        margin:30px;
+        float:left;
+        cursor:pointer;
+        max-height:100px;
+    }
+    .popup {
+        position: absolute;
+        height:100%;
+        width:100%;
+        top:0;
+        left:0;
+        display:none;
+        text-align:center;
+    }
+    .popup_bg {
+        background:rgba(0,0,0,0.4);
+        position:absolute;
+        z-index:1;
+        height:100%;
+        width:100%;
+    }
+    .popup_img {
+        position: relative;
+        margin:0 auto;
+        z-index:2;
+        max-height:94%;
+        max-width:94%;
+        margin:1% 0 0 0;
+    }
+</style>
+
