@@ -9,7 +9,12 @@
         <div class="form-group mt-3">
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="name" placeholder="Enter name" />
+                    <input type="text" class="form-control ${(nameError??)?string('is-invalid', '')}" value="<#if photo??>${photo.name}</#if>" name="name" placeholder="Enter name" />
+                    <#if nameError??>
+                        <div class="invalid-feedback">
+                            ${nameError}
+                        </div>
+                    </#if>
                 </div>
                 <div class="form-group">
                     <div class="custom-file">

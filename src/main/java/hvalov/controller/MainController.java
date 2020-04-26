@@ -57,9 +57,10 @@ public class MainController {
         if(bindingResult.hasErrors()) {
             Map<String, String> errorsMap = ControllerUtils.getErrors(bindingResult);
             model.mergeAttributes(errorsMap);
+            model.addAttribute("photo", photo);
         }
         else {
-            if(file != null) {
+            if(file != null && !file.getOriginalFilename().isEmpty()) {
                 File uploadDir = new File(uploadPath);
                 if(!uploadDir.exists()) {
                     uploadDir.mkdir();
@@ -71,8 +72,11 @@ public class MainController {
 
                 photo.setFilename(resultFilename);
             }
+
+            model.addAttribute("message", null);
+
+            photoRepo.save(photo);
         }
-        photoRepo.save(photo);
 
         Iterable<Photo> photos = photoRepo.findAll();
         model.addAttribute("photos", photos);

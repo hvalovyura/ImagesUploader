@@ -15,7 +15,6 @@ public class Photo {
     @Length(max = 100, message = "Name is too long (100 max).")
     private String name;
 
-    @NotBlank(message = "Please, fill the name.")
     private String filename;
 
     @ManyToOne(fetch = FetchType.EAGER)
