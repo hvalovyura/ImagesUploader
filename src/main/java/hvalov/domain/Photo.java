@@ -1,6 +1,9 @@
 package hvalov.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -9,7 +12,11 @@ public class Photo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "Please, fill the name.")
+    @Length(max = 100, message = "Name is too long (100 max).")
     private String name;
+
+    @NotBlank(message = "Please, fill the name.")
     private String filename;
 
     @ManyToOne(fetch = FetchType.EAGER)
