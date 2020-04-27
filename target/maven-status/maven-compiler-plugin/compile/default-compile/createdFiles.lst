@@ -1,0 +1,15 @@
+hvalov\Application.class
+hvalov\controller\ControllerUtils.class
+hvalov\config\MvcConfig.class
+hvalov\controller\MainController.class
+hvalov\domain\User.class
+hvalov\controller\UserController.class
+hvalov\service\MailSender.class
+hvalov\config\MailConfig.class
+hvalov\repos\PhotoRepo.class
+hvalov\domain\Photo.class
+hvalov\domain\Role.class
+hvalov\controller\RegistrationController.class
+hvalov\service\UserService.class
+hvalov\config\WebSecurityConfig.class
+hvalov\repos\UserRepo.class
