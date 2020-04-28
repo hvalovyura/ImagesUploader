@@ -22,7 +22,7 @@ public class User implements UserDetails {
     @Transient
     @NotBlank(message = "Password confirmation can not be empty")
     private String password2;
-    private boolean active;
+    private boolean active = true;
 
     @Email(message = "Email is not correct")
     @NotBlank(message = "Email can not be empty")
@@ -83,7 +83,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return isActive();
+        return true;
     }
 
     public void setUsername(String username) {
